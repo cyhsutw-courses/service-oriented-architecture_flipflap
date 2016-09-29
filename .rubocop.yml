@@ -2,6 +2,8 @@ AllCops:
   TargetRubyVersion: 2.3
   Exclude:
     - 'Gemfile'
+    - 'tsv_to_yml.rb'
+    - 'yml_to_tsv.rb'
 
 TrailingBlankLines:
   Enabled: true
