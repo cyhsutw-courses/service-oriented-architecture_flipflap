@@ -6,6 +6,7 @@ require_relative 'yaml_buddy'
 class FlipFlap
   include TsvBuddy
   include YamlBuddy
+
   # Do NOT create an initialize method
 
   attr_reader :data
