@@ -4,7 +4,6 @@ module TsvBuddy
   require 'csv'
 
   TAB = "\t"
-
   TSV_OPTIONS = { col_sep: TAB }.freeze
 
   # take_tsv: converts a String with TSV data into @data
