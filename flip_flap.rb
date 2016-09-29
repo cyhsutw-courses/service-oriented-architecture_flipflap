@@ -12,7 +12,7 @@ class FlipFlap
 
   def self.input_formats
     method_names = instance_methods.map(&:to_s)
-    method_names.select { |method| method.match(/^take_/) }
+    outputs = method_names.select { |method| method.match(/^take_/) }
     outputs&.map { |method| method[5..-1] } || []
   end
 end
