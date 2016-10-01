@@ -9,9 +9,7 @@ module TsvBuddy
   # take_tsv: converts a String with TSV data into @data
   # parameter: tsv - a String in TSV format
   def take_tsv(tsv)
-    tsv_data = CSV.parse(tsv, TSV_OPTIONS)
-    column_names = tsv_data.shift
-    @data = tsv_data.map { |row| hashify(column_names, row) }
+    @data = CSV.parse(tsv, TSV_OPTIONS.merge(headers: true)).map(&:to_h)
   end
 
   # to_tsv: converts @data into tsv string
@@ -21,10 +19,6 @@ module TsvBuddy
   end
 
   private
-
-  def hashify(keys, values)
-    keys.zip(values).to_h
-  end
 
   def dump(data:, to_file:)
     to_file << keys = extract_keys(data)
